@@ -1,10 +1,8 @@
-# Это файл конфигурации приложения, здесь может хранится путь к бд, ключ шифрования, что-то еще.
-# Чтобы добавить новую настройку, допишите ее в класс.
+from constants import DATABASE_PATH
 
-# Пример
 
-# class Config(object):
-#     DEBUG = True
-#     SECRET_HERE = '249y823r9v8238r9u'
-#     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-#     SQLALCHEMY_TRACK_MODIFICATIONS = False
+class Config(object):
+    DEBUG = True
+    SECRET_HERE = '228hihi1488hihihi222'
+    SQLALCHEMY_DATABASE_URI = DATABASE_PATH
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
