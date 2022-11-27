@@ -34,9 +34,7 @@ class MovieView(Resource):
 class MovieView(Resource):
     def get(self, mid):
         movie = Movie.query.get(mid)
-        sm_d = movie.__dict__
-        del sm_d['_sa_instance_state']
-        return MovieSchema.dump(sm_d), 200
+        return MovieSchema().dump(movie), 200
 
     def put(self, mid):
         movie = Movie.query.get(mid)

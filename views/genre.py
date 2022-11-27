@@ -8,18 +8,11 @@ genre_ns = Namespace('genre')
 class GenreView(Resource):
     def get(self):
         data = Genre.query.all()
-        result = []
-        for d in data:
-            sm_d = d.__dict__
-            del sm_d['_sa_instance_state']
-            result.append(sm_d)
-        return GenreSchema.dump(result), 200
+        return GenreSchema(many=True).dump(data), 200
 
 
 @genre_ns.route('/<int:gid>')
 class GenreView(Resource):
     def get(self, gid):
         genre = Genre.query.get(gid)
-        sm_d = genre.__dict__
-        del sm_d['_sa_instance_state']
-        return GenreSchema.dump(sm_d), 200
+        return GenreSchema().dump(genre), 200
