@@ -12,7 +12,7 @@ class GenreView(Resource):
 
 
 @genre_ns.route('/<int:gid>')
-class GenreView(Resource):
+class GenreIDView(Resource):
     def get(self, gid):
         genre = Genre.query.get(gid)
         return GenreSchema().dump(genre), 200

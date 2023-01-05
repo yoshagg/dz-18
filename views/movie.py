@@ -31,7 +31,7 @@ class MovieView(Resource):
 
 
 @movie_ns.route('/<int:mid>')
-class MovieView(Resource):
+class MovieIDView(Resource):
     def get(self, mid):
         movie = Movie.query.get(mid)
         return MovieSchema().dump(movie), 200

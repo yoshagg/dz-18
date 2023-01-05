@@ -12,7 +12,7 @@ class DirectorView(Resource):
 
 
 @director_ns.route('/<int:did>')
-class DirectorView(Resource):
+class DirectorIDView(Resource):
     def get(self, did):
         director = Director.query.get(did)
         return DirectorSchema().dump(director), 200

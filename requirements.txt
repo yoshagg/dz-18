@@ -16,3 +16,6 @@ Werkzeug==2.0.2
 zipp==3.6.0
 SQLAlchemy~=1.4.26
 Flask-SQLAlchemy==2.5.1
+
+pytest~=7.2.0
+marshmallow~=3.19.0
